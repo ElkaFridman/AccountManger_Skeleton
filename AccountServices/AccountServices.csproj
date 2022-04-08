@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>5e0ac991-6112-469e-b7e9-3b23d0987b5c</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\RequestStatus\**" />
+    <Content Remove="Models\RequestStatus\**" />
+    <EmbeddedResource Remove="Models\RequestStatus\**" />
+    <None Remove="Models\RequestStatus\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\Tenant.cs" />
+    <Compile Remove="Services\Interfaces\IDataAccess.cs" />
+    <Compile Remove="Services\Interfaces\IRequestTypeHandlerFactory.cs" />
+    <Compile Remove="Services\RequestHandler.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+</Project>
